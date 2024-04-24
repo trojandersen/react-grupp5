@@ -1,19 +1,8 @@
-# react-grupp5
+# React + Vite
 
-En gruppuppgift av
-Troj Andersen, Maya Arzapalo Björklund, Patrik Eriksson, Marina Rosenstiel
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-TEKNISKA KRAV
-Nedan följer de tekniska kraven för gruppuppgiften, dessa ska ni utgå från när ni börjar dela upp sidan i komponenter och skapar ett flödesschema. SPA:n ska bestå av minst 3 vyer/sektioner. 
+Currently, two official plugins are available:
 
-React-komponenter och Props:
-Använd återanvändbara komponenter.
-Använd props för att skicka data mellan komponenter.
-
-React Router:
-Implementera React Router för att hantera navigation mellan olika views/sektioner av webbplatsen.
-
-
-useState Hook:
-Använd useState för att hantera state i minst en komponent, till exempel för ett kontaktformulär eller en interaktiv sektion.
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
