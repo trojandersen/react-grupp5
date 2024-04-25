@@ -10,6 +10,10 @@ export default {
         evilcorp: "#F33355",
         placeholdergray: "#D0D0D0",
       },
+      fontFamily: {
+        source: ["Source Sans 3", "sans-serif"],
+        mono: ["PT Mono", "monospace"],
+      },
     },
   },
   plugins: [],

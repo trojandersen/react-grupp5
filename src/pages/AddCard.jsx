@@ -1,6 +1,7 @@
 import Card from "../components/Card";
 import CardForm from "../components/CardForm";
 import Top from "../components/Top";
+import Button from "../components/Button";
 
 function AddCard() {
   return (
@@ -9,6 +10,7 @@ function AddCard() {
       <Top />
       <Card />
       <CardForm />
+      <Button buttontext={"ADD CARD"} />
     </>
   );
 }

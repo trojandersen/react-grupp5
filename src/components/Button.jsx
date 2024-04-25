@@ -1,7 +1,7 @@
-function Button() {
+function Button({ buttontext }) {
   return (
     <>
-      <h1>Button</h1>
+      <button>{buttontext}</button>
     </>
   );
 }
