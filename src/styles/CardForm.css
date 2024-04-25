@@ -1,0 +1,35 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+  font-family: "PT Mono", "monospace";
+  padding: 2rem 0rem;
+}
+
+.form-details {
+  display: flex;
+  flex-direction: row;
+  align-items: row;
+  padding-top: 12px;
+}
+
+input,
+select {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 56px;
+  padding: 0.5rem;
+  font-size: 18px;
+}
+
+label {
+  padding-top: 12px;
+}
+
+.ccv {
+  width: 175px;
+}
+
+label {
+  font-size: 12px;
+}
