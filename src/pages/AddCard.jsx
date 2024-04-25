@@ -10,7 +10,7 @@ function AddCard({ title, subtitle }) {
       <Top title={title} subtitle={subtitle} />
       <Card />
       <CardForm />
-      <Button buttontext={"ADD CARD"} />
+      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} />
     </>
   );
 }

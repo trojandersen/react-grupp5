@@ -9,7 +9,11 @@ function Home({ title, subtitle }) {
       <Top title={title} subtitle={subtitle} />
       <Card />
       <CardStack />
-      <Button buttontext={"ADD A NEW CARD"} />
+      <Button
+        buttontext={"ADD A NEW CARD"}
+        path={"/add-card"}
+        style={"primary-button"}
+      />
     </>
   );
 }
