@@ -1,7 +1,8 @@
-function Top() {
+function Top(props) {
   return (
     <>
-      <h1>Top</h1>
+      <h1>{props.title}</h1>
+      <p>{props.subtitle}</p>
     </>
   );
 }
