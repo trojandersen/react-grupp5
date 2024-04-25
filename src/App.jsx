@@ -7,8 +7,16 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/add-card" element={<AddCard />} />
+        <Route
+          path="/"
+          element={<Home title={"E-WALLET"} subtitle={"ACTIVE CARD"} />}
+        />
+        <Route
+          path="/add-card"
+          element={
+            <AddCard title={"ADD A NEW BANK CARD"} subtitle={"NEW CARD"} />
+          }
+        />
       </Routes>
     </>
   );

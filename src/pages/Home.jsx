@@ -3,11 +3,10 @@ import CardStack from "../components/CardStack";
 import Top from "../components/Top";
 import Button from "../components/Button";
 
-function Home() {
+function Home({ title, subtitle }) {
   return (
     <>
-      <h1>Home</h1>
-      <Top />
+      <Top title={title} subtitle={subtitle} />
       <Card />
       <CardStack />
       <Button buttontext={"ADD A NEW CARD"} />
