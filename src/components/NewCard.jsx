@@ -2,7 +2,8 @@ import Chip from "../images/chip.svg";
 import Wifi from "../images/wifi.svg";
 import Bitcoin from "../images/bitcoin.svg";
 
-function Card({}) {
+function NewCard({ newCardData }) {
+  console.log(newCardData);
   return (
     <div className=" font-mono rounded-lg max-w-96 bg-slate-500 p-4 mx-auto">
       <header className="flex  justify-between items-start">
@@ -29,4 +30,4 @@ function Card({}) {
   );
 }
 
-export default Card;
+export default NewCard;
