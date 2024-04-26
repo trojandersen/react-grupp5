@@ -8,7 +8,7 @@ function AddCard({ title, subtitle }) {
   const [formData, setFormData] = useState(null);
 
   const handleFormChange = (updatedFormData) => {
-    console.log("Changes", updatedFormData);
+    console.log(updatedFormData);
     setFormData(updatedFormData);
   };
   return (

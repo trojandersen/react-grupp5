@@ -10,11 +10,12 @@ const CardForm = ({ onFormChange }) => {
     vendor: "",
   });
   const handleInputChange = (e) => {
-    const { i, value } = e.target;
-    setFormData((formData) => ({
+    const { name, value } = e.target;
+    const updatedFormData = {
       ...formData,
-      [i]: value,
-    }));
+      [name]: value,
+    };
+    setFormData(updatedFormData);
     // Call the onFormChange callback with the updated form data
     onFormChange(formData);
   };
@@ -23,6 +24,7 @@ const CardForm = ({ onFormChange }) => {
       <form className="form-wrapper">
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
+          name="cardNumber"
           type="text"
           value={formData.cardNumber}
           onChange={handleInputChange}
@@ -30,6 +32,7 @@ const CardForm = ({ onFormChange }) => {
 
         <label htmlFor="name">CARDHOLDER NAME</label>
         <input
+          name="cardName"
           type="text"
           value={formData.cardName}
           onChange={handleInputChange}
@@ -40,6 +43,7 @@ const CardForm = ({ onFormChange }) => {
           <div className="form-valid">
             <label htmlFor="valid">VALID THRU</label>
             <input
+              name="valid"
               type="text"
               value={formData.valid}
               onChange={handleInputChange}
@@ -49,16 +53,20 @@ const CardForm = ({ onFormChange }) => {
           <div className="form-ccv">
             <label htmlFor="ccv">CCV</label>
             <input
-              className="ccv"
-              value={formData.ccv}
+              name="ccv"
               type="text"
+              value={formData.ccv}
               onChange={handleInputChange}
             />
           </div>
         </div>
 
         <label htmlFor="vendor">VENDOR</label>
-        <select value={formData.vendor} onChange={handleInputChange}>
+        <select
+          name="vendor"
+          value={formData.vendor}
+          onChange={handleInputChange}
+        >
           <option value="Select vendor"></option>
           <option value="Bitcoin inc">BITCOIN INC</option>
           <option value="Ninja bank">NINJA BANK</option>
