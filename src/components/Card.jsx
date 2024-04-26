@@ -13,16 +13,16 @@ function Card() {
         <img src={Bitcoin} alt="bitcoin logo" />
       </header>
       <main>
-        <p className=" text-3xl pt-4 pb-5">XXXX XXXX XXXX XXXX</p>
+        <p className=" text-3xl pt-4 pb-5">1234 5678 9101 1123</p>
       </main>
       <footer className="flex  justify-between">
         <section>
           <p className=" text-xs">CARDHOLDER NAME</p>
-          <p className=" text-lg">FIRSTNAME LASTNAME</p>
+          <p className=" text-lg">RACHEL RICHTER</p>
         </section>
         <section className="text-right">
           <p className=" text-xs">VALID THRU</p>
-          <p className=" text-lg ">MM/YY</p>
+          <p className=" text-lg ">12/24</p>
         </section>
       </footer>
     </div>
