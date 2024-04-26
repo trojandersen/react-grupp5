@@ -1,32 +1,30 @@
-import Chip from '../images/chip.svg'
-import Wifi from '../images/wifi.svg'
-import Bitcoin from '../images/bitcoin.svg'
+import Chip from "../images/chip.svg";
+import Wifi from "../images/wifi.svg";
+import Bitcoin from "../images/bitcoin.svg";
 
 function Card() {
   return (
-    <div className=' font-mono rounded-lg max-w-96 bg-slate-500 p-4 mx-auto'>
-      <header className='flex  justify-between items-start'>
+    <div className=" font-mono rounded-lg max-w-96 bg-placeholdergray p-4 mx-auto">
+      <header className="flex  justify-between items-start">
         <section>
           <img src={Wifi} alt="wifi icon" />
           <img src={Chip} alt="chip icon" />
         </section>
-          <img src={Bitcoin} alt="bitcoin logo" />
+        <img src={Bitcoin} alt="bitcoin logo" />
       </header>
       <main>
-        <p className=' text-3xl pt-4 pb-5'>1234 5678 9101 1123</p>
+        <p className=" text-3xl pt-4 pb-5">XXXX XXXX XXXX XXXX</p>
       </main>
-      <footer className='flex  justify-between'>
+      <footer className="flex  justify-between">
         <section>
-          <p className=' text-xs'>CARDHOLDER NAME</p>
-          <p className=' text-lg'>RACHEL RICHTER</p>
+          <p className=" text-xs">CARDHOLDER NAME</p>
+          <p className=" text-lg">FIRSTNAME LASTNAME</p>
         </section>
-        <section className='text-right'>
-          <p className=' text-xs'>VALID THRU</p>
-          <p className=' text-lg '>12/24</p>
+        <section className="text-right">
+          <p className=" text-xs">VALID THRU</p>
+          <p className=" text-lg ">MM/YY</p>
         </section>
-        
       </footer>
-      
     </div>
   );
 }
