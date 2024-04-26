@@ -4,7 +4,7 @@ import Bitcoin from "../images/bitcoin.svg";
 
 function Card({}) {
   return (
-    <div className=" font-mono rounded-lg max-w-96 bg-slate-500 p-4 mx-auto">
+    <div className=" font-mono rounded-lg max-w-96 bg-placeholdergray p-4 mx-auto">
       <header className="flex  justify-between items-start">
         <section>
           <img src={Wifi} alt="wifi icon" />
@@ -13,7 +13,7 @@ function Card({}) {
         <img src={Bitcoin} alt="bitcoin logo" />
       </header>
       <main>
-        <p className=" text-3xl pt-4 pb-5">1231</p>
+        <p className=" text-3xl pt-4 pb-5">1234 5678 9101 1123</p>
       </main>
       <footer className="flex  justify-between">
         <section>
