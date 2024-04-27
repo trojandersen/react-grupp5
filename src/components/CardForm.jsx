@@ -1,30 +1,40 @@
 import "../styles/CardForm.css";
 
-function CardForm() {
+function CardForm({ onFormChange }) {
   return (
     <section>
       <form className="form-wrapper">
         <label htmlFor="card-number">CARD NUMBER</label>
-        <input type="number" id="card-number" />
+        <input type="number" id="cardNumber" onChange={onFormChange} />
 
         <label htmlFor="name">CARDHOLDER NAME</label>
-        <input type="text" id="name" placeholder="FIRSTNAME LASTNAME" />
+        <input
+          type="text"
+          id="cardholderName"
+          onChange={onFormChange}
+          placeholder="FIRSTNAME LASTNAME"
+        />
 
         <div className="form-details">
           <div className="form-valid">
             <label htmlFor="valid">VALID THRU</label>
-            <input type="date" id="valid" />
+            <input type="date" id="validThru" onChange={onFormChange} />
           </div>
 
           <div className="form-ccv">
             <label htmlFor="ccv">CCV</label>
-            <input className="ccv" type="number" id="ccv" />
+            <input
+              className="ccv"
+              type="number"
+              id="ccv"
+              onChange={onFormChange}
+            />
           </div>
         </div>
 
         <label htmlFor="vendor">VENDOR</label>
-        <select id="vendor">
-          <option value="Select vendor"></option>
+        <select id="vendor" onChange={onFormChange}>
+          <option value="">Select vendor</option>
           <option value="Bitcoin inc">BITCOIN INC</option>
           <option value="Ninja bank">NINJA BANK</option>
           <option value="Block chain inc">BLOCK CHAIN INC</option>
