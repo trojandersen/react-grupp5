@@ -13,19 +13,17 @@ function AddCard({ title, subtitle }) {
     vendor: "bitcoin",
   });
 
-  const handleFormChange = (e) => {
-    const { id, value } = e.target;
+  const onFormChange = (id, updatedValue) => {
     setFormData({
       ...formData,
-      [id]: value,
+      [id]: updatedValue,
     });
   };
-
   return (
     <>
       <Top title={title} subtitle={subtitle} />
       <NewCard newCardData={formData} />
-      <CardForm onFormChange={handleFormChange} />
+      <CardForm onFormChange={onFormChange} />
       <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} />
     </>
   );
