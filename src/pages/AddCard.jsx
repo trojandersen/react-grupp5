@@ -6,11 +6,11 @@ import NewCard from "../components/NewCard";
 
 function AddCard({ title, subtitle }) {
   const [formData, setFormData] = useState({
-    cardNumber: "",
-    cardholderName: "",
-    validThru: "",
+    cardNumber: "XXXX XXXX XXXX XXXX",
+    cardholderName: "FIRSTNAME LASTNAME",
+    validThru: "MM/YY",
     ccv: "",
-    vendor: "",
+    vendor: "bitcoin",
   });
 
   const handleFormChange = (e) => {

@@ -15,7 +15,7 @@ const cardData = [
   },
   {
     id: 3,
-    vendor: "BlockChain",
+    vendor: "blockChain",
     cardNum: "1234 5678 9101 1123",
     cardDate: "11/24",
     cardName: "RACHEL RICHTER",
@@ -27,13 +27,7 @@ const cardData = [
     cardDate: "10/24",
     cardName: "RACHEL RICHTER",
   },
-  {
-    id: 5,
-    vendor: "newCard",
-    cardNum: "XXXX XXXX XXXX XXXX",
-    cardDate: "MM/YY",
-    cardName: "FIRSTNAME LASTNAME",
-  },
+
 ];
 
 export default cardData;
