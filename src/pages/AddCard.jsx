@@ -5,12 +5,22 @@ import React, { useState } from "react";
 import NewCard from "../components/NewCard";
 
 function AddCard({ title, subtitle }) {
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState({
+    cardNumber: "",
+    cardholderName: "",
+    validThru: "",
+    ccv: "",
+    vendor: "",
+  });
 
-  const handleFormChange = (updatedFormData) => {
-    console.log(updatedFormData);
-    setFormData(updatedFormData);
+  const handleFormChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
   };
+
   return (
     <>
       <Top title={title} subtitle={subtitle} />
