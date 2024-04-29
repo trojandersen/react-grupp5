@@ -6,9 +6,10 @@ function CardStack(props) {
 
   let cardDet = cards.map((card, index) => (
     <Card
-        key={card.id}
+        key={index}
         props={card}
         style={{marginTop: -155}}
+        onClick={props.onClick}
     />
 ))
 
