@@ -5,11 +5,11 @@ function CardForm({ onFormChange }) {
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     let updatedValue = value;
-    if (id === "cardNumber") {
+    if (id === "cardNum") {
       const formattedValue = value.replace(/\D/g, "").slice(0, 16);
       const formattedCardNumber = formattedValue.match(/.{1,4}/g)?.join(" ");
       updatedValue = formattedCardNumber || "XXXX XXXX XXXX XXXX";
-    } else if (id === "cardholderName") {
+    } else if (id === "cardName") {
       updatedValue = value.replace(/[^a-zA-Z\s]/g, "").toUpperCase();
     }
 
@@ -23,7 +23,7 @@ function CardForm({ onFormChange }) {
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
           type="text"
-          id="cardNumber"
+          id="cardNum"
           onChange={handleInputChange}
           maxLength={16}
           onKeyDown={(e) => {
@@ -40,10 +40,10 @@ function CardForm({ onFormChange }) {
           }}
         />
 
-        <label htmlFor="cardholder-name">CARDHOLDER NAME</label>
+        <label htmlFor="card-name">CARDHOLDER NAME</label>
         <input
           type="text"
-          id="cardholderName"
+          id="cardName"
           onChange={handleInputChange}
           placeholder="FIRSTNAME LASTNAME"
           style={{ textTransform: "uppercase" }}
@@ -59,7 +59,7 @@ function CardForm({ onFormChange }) {
         <div className="form-details">
           <div className="form-valid">
             <label htmlFor="valid">VALID THRU</label>
-            <input type="date" id="validThru" onChange={handleInputChange} />
+            <input type="date" id="cardDate" onChange={handleInputChange} />
           </div>
 
           <div className="form-ccv">

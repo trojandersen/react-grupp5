@@ -3,14 +3,15 @@ import Top from "../components/Top";
 import Button from "../components/Button";
 import React, { useState } from "react";
 import NewCard from "../components/NewCard";
+import cardData from "../cardData";
 
-function AddCard({ title, subtitle }) {
+function AddCard({ title, subtitle, onClick }) {
   const [formData, setFormData] = useState({
-    cardNumber: "XXXX XXXX XXXX XXXX",
-    cardholderName: "FIRSTNAME LASTNAME",
-    validThru: "MM/YY",
+    cardNum: "XXXX XXXX XXXX XXXX",
+    cardName: "FIRSTNAME LASTNAME",
+    cardDate: "MM/YY",
     ccv: "",
-    vendor: "bitcoin",
+    vendor: "",
   });
 
   const onFormChange = (id, updatedValue) => {
@@ -19,12 +20,16 @@ function AddCard({ title, subtitle }) {
       [id]: updatedValue,
     });
   };
+  function addNewCard() {
+    cardData.push(formData)
+    console.log(cardData)
+  }
   return (
     <>
       <Top title={title} subtitle={subtitle} />
       <NewCard newCardData={formData} />
       <CardForm onFormChange={onFormChange} />
-      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} />
+      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} onClick={addNewCard}  />
     </>
   );
 }
