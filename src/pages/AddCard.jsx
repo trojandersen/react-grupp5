@@ -7,11 +7,11 @@ import cardData from "../cardData";
 
 function AddCard({ title, subtitle, onClick }) {
   const [formData, setFormData] = useState({
-    cardNum: "XXXX XXXX XXXX XXXX",
-    cardName: "FIRSTNAME LASTNAME",
-    cardDate: "MM/YY",
-    ccv: "",
     vendor: "",
+    cardNum: "XXXX XXXX XXXX XXXX",
+    cardDate: "MM/YY",
+    cardName: "FIRSTNAME LASTNAME",
+    active: false
   });
 
   const onFormChange = (id, updatedValue) => {
