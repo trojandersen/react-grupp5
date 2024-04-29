@@ -8,12 +8,12 @@ function CardForm({ onFormChange }) {
     <section>
       <form className="form-wrapper">
         <label htmlFor="card-number">CARD NUMBER</label>
-        <input type="number" id="cardNumber" onChange={onFormChange} />
+        <input type="number" id="cardNum" onChange={onFormChange} />
 
         <label htmlFor="name">CARDHOLDER NAME</label>
         <input
           type="text"
-          id="cardholderName"
+          id="cardName"
           onChange={onFormChange}
           placeholder="FIRSTNAME LASTNAME"
         />
@@ -21,7 +21,7 @@ function CardForm({ onFormChange }) {
         <div className="form-details">
           <div className="form-valid">
             <label htmlFor="valid">VALID THRU</label>
-            <input type="date" id="validThru" onChange={onFormChange} />
+            <input type="date" id="cardDate" onChange={onFormChange} />
           </div>
 
           <div className="form-ccv">

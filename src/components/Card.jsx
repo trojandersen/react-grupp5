@@ -5,6 +5,7 @@ import blockChain from '../images/blockchain.svg'
 import ninjaBank from '../images/ninjabank.svg'
 import evilCorp from '../images/evilcorp.svg'
 import "../styles/Card.css"
+import { useState } from "react";
 
 function Card(props) {
 
@@ -12,12 +13,13 @@ function Card(props) {
 
   let cardDet = props.props;
 
-  const cardNum = cardDet.cardNum
-  const cardName = cardDet.cardName
-  const cardDate = cardDet.cardDate
+  const cardNum = cardDet.cardNum;
+  const cardName = cardDet.cardName;
+  const cardDate = cardDet.cardDate;
 
   let vendorLogo;
   let vendorColor;
+
   switch (cardDet.vendor) {
     case "bitcoin":
         vendorLogo = bitcoin;
@@ -36,15 +38,15 @@ function Card(props) {
         vendorColor = "evilcorp";
         break;
     default:
-        vendorLogo = null;
-        vendorColor = null;
+        vendorLogo = bitcoin;
+        vendorColor = "bitcoin";
 }
-
-
+  
   return (
     <div 
       className={`${vendorColor} relative font-mono rounded-lg max-w-96 p-4 mx-auto`}
       style={cardPlacement}
+      onClick={props.onClick}
     >
       <header className="flex  justify-between items-start">
         <section>
@@ -59,11 +61,11 @@ function Card(props) {
       <footer className="flex  justify-between">
         <section>
           <p className=" text-xs">CARDHOLDER NAME</p>
-          <p className=" text-lg">RACHEL RICHTER</p>
+          <p className=" text-lg">{cardName}</p>
         </section>
         <section className="text-right">
           <p className=" text-xs">VALID THRU</p>
-          <p className=" text-lg ">12/24</p>
+          <p className=" text-lg ">{cardDate}</p>
         </section>
       </footer>
     </div>
