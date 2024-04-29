@@ -14,28 +14,22 @@ function AddCard({ title, subtitle, onClick }) {
     vendor: "",
   });
 
-  const handleFormChange = (e) => {
-    const { id, value } = e.target;
+  const onFormChange = (id, updatedValue) => {
     setFormData({
       ...formData,
-      [id]: value,
+      [id]: updatedValue,
     });
   };
-
-  
-  function addCard() {
+  function addNewCard() {
     cardData.push(formData)
     console.log(cardData)
   }
-
-  
-
   return (
     <>
       <Top title={title} subtitle={subtitle} />
       <NewCard newCardData={formData} />
-      <CardForm onFormChange={handleFormChange} />
-      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} onClick={addCard}  />
+      <CardForm onFormChange={onFormChange} />
+      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} onClick={addNewCard}  />
     </>
   );
 }
