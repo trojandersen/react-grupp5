@@ -2,6 +2,8 @@ import "../styles/CardForm.css";
 import React, { useState } from "react";
 
 function CardForm({ onFormChange }) {
+
+
   return (
     <section>
       <form className="form-wrapper">
@@ -36,10 +38,10 @@ function CardForm({ onFormChange }) {
         <label htmlFor="vendor">VENDOR</label>
         <select id="vendor" onChange={onFormChange}>
           <option value="">Select vendor</option>
-          <option value="Bitcoin inc">BITCOIN INC</option>
-          <option value="Ninja bank">NINJA BANK</option>
-          <option value="Block chain inc">BLOCK CHAIN INC</option>
-          <option value="Evil corp">EVIL CORP</option>
+          <option value="bitcoin">BITCOIN INC</option>
+          <option value="ninjaBank">NINJA BANK</option>
+          <option value="blockChain">BLOCK CHAIN INC</option>
+          <option value="evilCorp">EVIL CORP</option>
         </select>
       </form>
     </section>

@@ -11,16 +11,16 @@ function NewCard({ newCardData }) {
 
   let vendorLogo;
   switch (vendor) {
-    case "Bitcoin inc":
+    case "bitcoin":
       vendorLogo = BitcoinLogo;
       break;
-    case "Ninja bank":
+    case "ninjaBank":
       vendorLogo = NinjaBankLogo;
       break;
-    case "Block chain inc":
+    case "blockChain":
       vendorLogo = BlockChainLogo;
       break;
-    case "Evil corp":
+    case "evilCorp":
       vendorLogo = EvilCorpLogo;
       break;
     default:
@@ -28,7 +28,7 @@ function NewCard({ newCardData }) {
   }
 
   return (
-    <div className=" font-mono rounded-lg max-w-96 bg-slate-500 p-4 mx-auto">
+    <div className=" font-mono rounded-lg max-w-96 bg-placeholdergray p-4 mx-auto min-h-56">
       <header className="flex  justify-between items-start">
         <section>
           <img src={Wifi} alt="wifi icon" />
@@ -48,7 +48,7 @@ function NewCard({ newCardData }) {
         </section>
         <section className="text-right">
           <p className=" text-xs">VALID THRU</p>
-          <p className=" text-lg ">{validThru}</p
+          <p className=" text-lg ">{validThru}</p>
         </section>
       </footer>
     </div>
