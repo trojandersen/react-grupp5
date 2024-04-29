@@ -1,5 +1,6 @@
 import Chip from "../images/chip.svg";
 import Wifi from "../images/wifi.svg";
+
 import BitcoinLogo from "../images/bitcoin.svg";
 import NinjaBankLogo from "../images/ninjabank.svg";
 import BlockChainLogo from "../images/blockchain.svg";
@@ -33,6 +34,7 @@ function NewCard({ newCardData }) {
           <img src={Wifi} alt="wifi icon" />
           <img src={Chip} alt="chip icon" />
         </section>
+
         {vendorLogo && <img src={vendorLogo} alt={`${vendor} logo`} />}
       </header>
       <main>
@@ -41,11 +43,12 @@ function NewCard({ newCardData }) {
       <footer className="flex  justify-between">
         <section>
           <p className=" text-xs">CARDHOLDER NAME</p>
+
           <p className=" text-lg">{cardholderName}</p>
         </section>
         <section className="text-right">
           <p className=" text-xs">VALID THRU</p>
-          <p className=" text-lg ">{validThru}</p>
+          <p className=" text-lg ">{validThru}</p
         </section>
       </footer>
     </div>

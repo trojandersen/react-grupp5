@@ -1,4 +1,5 @@
 import "../styles/CardForm.css";
+import React, { useState } from "react";
 
 function CardForm({ onFormChange }) {
   return (
@@ -43,6 +44,6 @@ function CardForm({ onFormChange }) {
       </form>
     </section>
   );
-}
+};
 
 export default CardForm;
