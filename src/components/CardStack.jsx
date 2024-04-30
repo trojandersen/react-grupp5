@@ -11,7 +11,7 @@ function CardStack(props) {
     <Card
       key={index}
       props={card}
-      style={{ marginTop: index === 0 ? 0 : -175 }}
+      style={{ marginTop: index === 0 ? 0 : -190 }}
       /* Skickar med hela kortobjektet till handleCardClick (som finns i Home), istället för att anv
       index. Kunde inte uppdatera korten som jag ville annars */
       onClick={() => onClick(card)}
