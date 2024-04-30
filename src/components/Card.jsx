@@ -1,5 +1,6 @@
 import Chip from "../images/chip.svg";
 import Wifi from "../images/wifi.svg";
+import WhiteWifi from "../images/white_wifi.svg";
 import bitcoin from "../images/bitcoin.svg";
 import blockChain from "../images/blockchain.svg";
 import ninjaBank from "../images/ninjabank.svg";
@@ -18,27 +19,33 @@ function Card(props) {
 
   let vendorLogo;
   let vendorColor;
+  let wifiLogo;
 
   switch (cardDet.vendor) {
     case "bitcoin":
       vendorLogo = bitcoin;
       vendorColor = "bitcoin";
+      wifiLogo = Wifi;
       break;
     case "ninjaBank":
       vendorLogo = ninjaBank;
       vendorColor = "ninjabank";
+      wifiLogo = WhiteWifi;
       break;
     case "blockChain":
       vendorLogo = blockChain;
       vendorColor = "blockchain";
+      wifiLogo = WhiteWifi;
       break;
     case "evilCorp":
       vendorLogo = evilCorp;
       vendorColor = "evilcorp";
+      wifiLogo = WhiteWifi;
       break;
     default:
       vendorLogo = bitcoin;
       vendorColor = "bitcoin";
+      wifiLogo = Wifi;
   }
 
   return (
@@ -49,7 +56,7 @@ function Card(props) {
     >
       <header className="flex  justify-between items-start">
         <section>
-          <img src={Wifi} alt="wifi icon" />
+          <img src={wifiLogo} alt="wifi icon" />
           <img src={Chip} alt="chip icon" />
         </section>
         <img src={vendorLogo} alt="" />
