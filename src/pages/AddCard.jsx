@@ -3,30 +3,33 @@ import Top from "../components/Top";
 import Button from "../components/Button";
 import React, { useState } from "react";
 import NewCard from "../components/NewCard";
+import cardData from "../cardData";
 
-function AddCard({ title, subtitle }) {
+function AddCard({ title, subtitle, onClick }) {
   const [formData, setFormData] = useState({
-    cardNumber: "XXXX XXXX XXXX XXXX",
-    cardholderName: "FIRSTNAME LASTNAME",
-    validThru: "MM/YY",
-    ccv: "",
-    vendor: "bitcoin",
+    vendor: "",
+    cardNum: "XXXX XXXX XXXX XXXX",
+    cardDate: "MM/YY",
+    cardName: "FIRSTNAME LASTNAME",
+    active: false
   });
 
-  const handleFormChange = (e) => {
-    const { id, value } = e.target;
+  const onFormChange = (id, updatedValue) => {
     setFormData({
       ...formData,
-      [id]: value,
+      [id]: updatedValue,
     });
   };
-
+  function addNewCard() {
+    cardData.push(formData)
+    console.log(cardData)
+  }
   return (
     <>
       <Top title={title} subtitle={subtitle} />
       <NewCard newCardData={formData} />
-      <CardForm onFormChange={handleFormChange} />
-      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} />
+      <CardForm onFormChange={onFormChange} />
+      <Button buttontext={"ADD CARD"} path={"/"} style={"secondary-button"} onClick={addNewCard}  />
     </>
   );
 }

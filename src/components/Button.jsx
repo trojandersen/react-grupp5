@@ -1,14 +1,12 @@
 import "../styles/Button.css";
 import { Link } from "react-router-dom";
 
-function Button({ buttontext, path, style, onSubmit }) {
-  // const handleClick = () => {
-  //   onSubmit();
-  // };
+function Button({ buttontext, path, style, onClick }) {
+
   return (
     <>
       <Link to={path}>
-        <button className={`${style} button`}>{buttontext}</button>
+        <button onClick={onClick} className={`${style} button`}>{buttontext}</button>
       </Link>
     </>
   );
