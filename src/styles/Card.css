@@ -1,3 +1,7 @@
+.boxshadow {
+  box-shadow: 0px 0px 8px 0px #00000040;
+}
+
 .bitcoin {
   background-color: #ffae34;
   color: black;

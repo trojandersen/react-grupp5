@@ -1,14 +1,13 @@
 import Chip from "../images/chip.svg";
 import Wifi from "../images/wifi.svg";
-import bitcoin from '../images/bitcoin.svg'
-import blockChain from '../images/blockchain.svg'
-import ninjaBank from '../images/ninjabank.svg'
-import evilCorp from '../images/evilcorp.svg'
-import "../styles/Card.css"
+import bitcoin from "../images/bitcoin.svg";
+import blockChain from "../images/blockchain.svg";
+import ninjaBank from "../images/ninjabank.svg";
+import evilCorp from "../images/evilcorp.svg";
+import "../styles/Card.css";
 import { useState } from "react";
 
 function Card(props) {
-
   let cardPlacement = props.style;
 
   let cardDet = props.props;
@@ -22,29 +21,29 @@ function Card(props) {
 
   switch (cardDet.vendor) {
     case "bitcoin":
-        vendorLogo = bitcoin;
-        vendorColor = "bitcoin";
-        break;
-        case "ninjaBank":
-        vendorLogo = ninjaBank;
-        vendorColor = "ninjabank";
-        break;
+      vendorLogo = bitcoin;
+      vendorColor = "bitcoin";
+      break;
+    case "ninjaBank":
+      vendorLogo = ninjaBank;
+      vendorColor = "ninjabank";
+      break;
     case "blockChain":
-        vendorLogo = blockChain;
-        vendorColor = "blockchain";
-        break;
+      vendorLogo = blockChain;
+      vendorColor = "blockchain";
+      break;
     case "evilCorp":
-        vendorLogo = evilCorp;
-        vendorColor = "evilcorp";
-        break;
+      vendorLogo = evilCorp;
+      vendorColor = "evilcorp";
+      break;
     default:
-        vendorLogo = bitcoin;
-        vendorColor = "bitcoin";
-}
-  
+      vendorLogo = bitcoin;
+      vendorColor = "bitcoin";
+  }
+
   return (
-    <div 
-      className={`${vendorColor} relative font-mono rounded-lg max-w-96 p-4 mx-auto`}
+    <div
+      className={`${vendorColor} relative font-mono rounded-lg max-w-96 p-4 mx-auto boxshadow`}
       style={cardPlacement}
       onClick={props.onClick}
     >

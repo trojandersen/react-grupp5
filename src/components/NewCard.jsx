@@ -36,7 +36,7 @@ function NewCard({ newCardData }) {
 
   return (
     <div
-      className={`${vendorColor} font-mono rounded-lg  max-w-96 p-4 mx-auto min-h-56`}
+      className={`${vendorColor} font-mono rounded-lg  max-w-96 p-4 mx-auto min-h-56 boxshadow`}
     >
       <header className="flex  justify-between items-start">
         <section>

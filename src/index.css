@@ -5,3 +5,11 @@
 body {
   padding: 1rem;
 }
+
+input {
+  padding: 0 1rem;
+}
+
+select {
+  padding: 0 1rem;
+}
