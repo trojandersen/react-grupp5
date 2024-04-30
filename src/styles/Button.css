@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  min-width: 24rem;
   height: 80px;
   border-radius: 8px;
   border: 1px solid black;
@@ -10,6 +10,7 @@
   font-size: 22px;
   font-weight: 700;
   line-height: 24.64px;
+  margin: auto;
 }
 
 .primary-button {
