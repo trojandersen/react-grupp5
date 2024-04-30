@@ -1,26 +1,28 @@
 import Card from "./Card";
 
 function CardStack(props) {
+  const { cards, onClick } = props;
 
-  let cards = props.props;
+  /* Skapar en array för alla inaktiva kort */
+  const inactiveCards = cards.filter((card) => !card.active);
 
-  let cardDet = cards.map((card, index) => (
+  /* Renderar varje inaktivt kort */
+  const cardDet = inactiveCards.map((card, index) => (
     <Card
-        key={index}
-        props={card}
-        style={{marginTop: -155}}
-        onClick={props.onClick}
+      key={index}
+      props={card}
+      style={{ marginTop: index === 0 ? 0 : -155 }}
+      /* Skickar med hela kortobjektet till handleCardClick (som finns i Home), istället för att anv
+      index. Kunde inte uppdatera korten som jag ville annars */
+      onClick={() => onClick(card)}
     />
-))
+  ));
 
-return(
-  <>
-  <section className=" card-stack mt-44 mb-6">
-      {cardDet}
-  </section>
-  </>
-)
-
+  return (
+    <>
+      <section className="card-stack mt-44 mb-6">{cardDet}</section>
+    </>
+  );
 }
 
 export default CardStack;
