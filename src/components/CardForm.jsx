@@ -6,8 +6,13 @@ function CardForm({ onFormChange }) {
     const { id, value } = e.target;
     let updatedValue = value;
     if (id === "cardNum") {
-      const formattedValue = value.replace(/\D/g, "").slice(0, 16);
+      const formattedValue = value
+        .replace(/\D/g, "")
+        .slice(0, 16)
+        .padEnd(16, "X");
+
       const formattedCardNumber = formattedValue.match(/.{1,4}/g)?.join(" ");
+
       updatedValue = formattedCardNumber || "XXXX XXXX XXXX XXXX";
     } else if (id === "cardName") {
       updatedValue = value.replace(/[^a-zA-Z\s]/g, "").toUpperCase();
@@ -22,22 +27,22 @@ function CardForm({ onFormChange }) {
       <form className="form-wrapper">
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
-          type="text"
+          type="tel"
           id="cardNum"
           onChange={handleInputChange}
           maxLength={16}
-          onKeyDown={(e) => {
-            if (
-              !(
-                (e.key >= "0" && e.key <= "9") ||
-                e.key === "Backspace" ||
-                e.key === "Delete" ||
-                e.key === "Tab"
-              )
-            ) {
-              e.preventDefault();
-            }
-          }}
+          // onKeyDown={(e) => {
+          //   if (
+          //     !(
+          //       (e.key >= "0" && e.key <= "9") ||
+          //       e.key === "Backspace" ||
+          //       e.key === "Delete" ||
+          //       e.key === "Tab"
+          //     )
+          //   ) {
+          //     e.preventDefault();
+          //   }
+          // }}
         />
 
         <label htmlFor="card-name">CARDHOLDER NAME</label>
