@@ -16,10 +16,26 @@ function CardForm({ onFormChange }) {
       updatedValue = formattedCardNumber || "XXXX XXXX XXXX XXXX";
     } else if (id === "cardName") {
       updatedValue = value.replace(/[^a-zA-Z\s]/g, "").toUpperCase();
+    } else if (id === "cardDate") {
+      updatedValue = value.match(/.{1,2}/g)?.join("/");
     }
 
     // Trigger parent component's form change handler
     onFormChange(id, updatedValue);
+  };
+
+  // checks the inputfield for eligble characters (numbers)
+  const numberInputCheck = (e) => {
+    if (
+      !(
+        (e.key >= "0" && e.key <= "9") ||
+        e.key === "Backspace" ||
+        e.key === "Delete" ||
+        e.key === "Tab"
+      )
+    ) {
+      e.preventDefault();
+    }
   };
 
   return (
@@ -27,22 +43,11 @@ function CardForm({ onFormChange }) {
       <form className="form-wrapper">
         <label htmlFor="card-number">CARD NUMBER</label>
         <input
-          type="tel"
+          type="text"
           id="cardNum"
           onChange={handleInputChange}
           maxLength={16}
-          // onKeyDown={(e) => {
-          //   if (
-          //     !(
-          //       (e.key >= "0" && e.key <= "9") ||
-          //       e.key === "Backspace" ||
-          //       e.key === "Delete" ||
-          //       e.key === "Tab"
-          //     )
-          //   ) {
-          //     e.preventDefault();
-          //   }
-          // }}
+          onKeyDown={numberInputCheck}
         />
 
         <label htmlFor="card-name">CARDHOLDER NAME</label>
@@ -64,7 +69,13 @@ function CardForm({ onFormChange }) {
         <div className="form-details">
           <div className="form-valid">
             <label htmlFor="valid">VALID THRU</label>
-            <input type="date" id="cardDate" onChange={handleInputChange} />
+            <input
+              type="text"
+              id="cardDate"
+              onChange={handleInputChange}
+              maxLength={4}
+              onKeyDown={numberInputCheck}
+            />
           </div>
 
           <div className="form-ccv">
@@ -75,18 +86,7 @@ function CardForm({ onFormChange }) {
               id="ccv"
               onChange={handleInputChange}
               maxLength={3}
-              onKeyDown={(e) => {
-                if (
-                  !(
-                    (e.key >= "0" && e.key <= "9") ||
-                    e.key === "Backspace" ||
-                    e.key === "Delete" ||
-                    e.key === "Tab"
-                  )
-                ) {
-                  e.preventDefault();
-                }
-              }}
+              onKeyDown={numberInputCheck}
             />
           </div>
         </div>

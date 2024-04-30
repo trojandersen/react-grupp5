@@ -27,7 +27,6 @@ const cardData = [
     cardName: "RACHEL RICHTER",
     active: false,
   },
-
 ];
 
 export default cardData;
