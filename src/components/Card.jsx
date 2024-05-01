@@ -1,14 +1,14 @@
 import Chip from "../images/chip.svg";
 import Wifi from "../images/wifi.svg";
-import bitcoin from '../images/bitcoin.svg'
-import blockChain from '../images/blockchain.svg'
-import ninjaBank from '../images/ninjabank.svg'
-import evilCorp from '../images/evilcorp.svg'
-import "../styles/Card.css"
+import WhiteWifi from "../images/white_wifi.svg";
+import bitcoin from "../images/bitcoin.svg";
+import blockChain from "../images/blockchain.svg";
+import ninjaBank from "../images/ninjabank.svg";
+import evilCorp from "../images/evilcorp.svg";
+import "../styles/Card.css";
 import { useState } from "react";
 
 function Card(props) {
-
   let cardPlacement = props.style;
 
   let cardDet = props.props;
@@ -19,38 +19,44 @@ function Card(props) {
 
   let vendorLogo;
   let vendorColor;
+  let wifiLogo;
 
   switch (cardDet.vendor) {
     case "bitcoin":
-        vendorLogo = bitcoin;
-        vendorColor = "bitcoin";
-        break;
-        case "ninjaBank":
-        vendorLogo = ninjaBank;
-        vendorColor = "ninjabank";
-        break;
+      vendorLogo = bitcoin;
+      vendorColor = "bitcoin";
+      wifiLogo = Wifi;
+      break;
+    case "ninjaBank":
+      vendorLogo = ninjaBank;
+      vendorColor = "ninjabank";
+      wifiLogo = WhiteWifi;
+      break;
     case "blockChain":
-        vendorLogo = blockChain;
-        vendorColor = "blockchain";
-        break;
+      vendorLogo = blockChain;
+      vendorColor = "blockchain";
+      wifiLogo = WhiteWifi;
+      break;
     case "evilCorp":
-        vendorLogo = evilCorp;
-        vendorColor = "evilcorp";
-        break;
+      vendorLogo = evilCorp;
+      vendorColor = "evilcorp";
+      wifiLogo = WhiteWifi;
+      break;
     default:
-        vendorLogo = bitcoin;
-        vendorColor = "bitcoin";
-}
-  
+      vendorLogo = bitcoin;
+      vendorColor = "bitcoin";
+      wifiLogo = Wifi;
+  }
+
   return (
-    <div 
-      className={`${vendorColor} relative font-mono rounded-lg max-w-96 p-4 mx-auto`}
+    <div
+      className={`${vendorColor} relative font-mono rounded-lg max-w-96 p-4 mx-auto boxshadow`}
       style={cardPlacement}
       onClick={props.onClick}
     >
       <header className="flex  justify-between items-start">
         <section>
-          <img src={Wifi} alt="wifi icon" />
+          <img src={wifiLogo} alt="wifi icon" />
           <img src={Chip} alt="chip icon" />
         </section>
         <img src={vendorLogo} alt="" />
